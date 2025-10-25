@@ -52,4 +52,5 @@ Thumbs.db
 .vscode/
 .history/
 
-.mysql-data/
+# Carpeta de datos MySQL
+mysql-data/
