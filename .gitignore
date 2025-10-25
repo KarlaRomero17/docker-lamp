@@ -1,0 +1,53 @@
+# ===========================
+# ⚙️ Archivos y carpetas de Docker
+# ===========================
+
+# Archivos de configuración temporales
+*.pid
+*.log
+*.lock
+
+# Carpetas generadas por contenedores
+/data/
+/db_data/
+/mysql/
+/phpmyadmin/
+
+# Volúmenes o datos persistentes
+volumes/
+docker-volume/
+
+# Archivos de construcción y caché
+.docker/
+docker-compose.override.yml
+docker-compose.override.yaml
+Dockerfile.*
+
+# Evitar subir imágenes o dumps de bases de datos
+*.sql
+*.tar
+*.gz
+*.zip
+*.bak
+
+# ===========================
+# ⚡ Archivos del entorno
+# ===========================
+
+# Variables de entorno
+.env
+.env.*
+
+# ===========================
+# 🧠 Archivos del sistema
+# ===========================
+
+# Sistema operativo / IDE
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Visual Studio Code
+.vscode/
+.history/
