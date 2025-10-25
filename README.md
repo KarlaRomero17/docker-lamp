@@ -1,25 +1,26 @@
 # Proyecto LAMP con Docker
 
-Este proyecto contiene un **entorno LAMP (Linux + Apache + MySQL + PHP)** completamente configurado usando **Docker Compose**, con soporte opcional para **phpMyAdmin**.  
-Permite levantar un servidor web PHP con base de datos MySQL sin necesidad de instalar nada en tu sistema operativo.
+Este proyecto contiene un **entorno LAMP (Linux + Apache + MySQL + PHP)** completamente configurado usando **Docker Compose**, con soporte opcional para **phpMyAdmin**.
 
----
+Permite levantar rápidamente un servidor web PHP con base de datos MySQL de forma aislada y sin necesidad de instalaciones adicionales en tu sistema operativo.
 
 ## 📁 Estructura del proyecto
 
+```plaintext
 mi-lamp-docker/
-├── docker-compose.yml # Archivo principal de Docker Compose
-├── Dockerfile # Imagen personalizada de PHP + Apache con mysqli
-├── .env # Variables de entorno (credenciales)
-├── .gitignore # Ignora archivos generados por Docker
-├── www/ # Código PHP de la aplicación
-│ ├── index.php
-│ └── info.php
-├── mysql-data/ # Datos persistentes de MySQL (ignorado por Git)
-└── mysql-init/ # Scripts SQL iniciales (opcional)
-
+├── docker-compose.yml     # Configuración de servicios Docker
+├── Dockerfile            # Imagen PHP + Apache personalizada
+├── .env                  # Variables de entorno (credenciales)
+├── .gitignore           # Archivos ignorados por Git
+├── www/                 # Código fuente PHP
+│   ├── index.php
+│   └── info.php
+├── mysql-data/         # Persistencia de MySQL
+└── mysql-init/        # Scripts SQL de inicialización
+```
 
 ---
+
 
 ## ⚙️ Requisitos previos
 
