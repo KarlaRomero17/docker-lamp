@@ -51,3 +51,5 @@ Thumbs.db
 # Visual Studio Code
 .vscode/
 .history/
+
+.mysql
