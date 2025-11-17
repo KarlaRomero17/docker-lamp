@@ -1,0 +1,67 @@
+{
+    "family": "lamp-task",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "256",
+    "memory": "512",
+    "executionRoleArn": "arn:aws:iam::146009966183:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "name": "lamp-app",
+            "image": "146009966183.dkr.ecr.us-east-1.amazonaws.com/laravel-lamp-app:latest",
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "APP_ENV",
+                    "value": "production"
+                },
+                {
+                    "name": "APP_DEBUG",
+                    "value": "true"
+                },
+                {
+                    "name": "APP_KEY",
+                    "value": "base64:hUJm+S/fwEl3T98cK1F/Q87eevROuqifip11KThtMD4="
+                },
+                {
+                    "name": "DB_CONNECTION",
+                    "value": "mysql"
+                },
+                {
+                    "name": "DB_HOST",
+                    "value": "lamp-mysql.cm9m8c2cofiy.us-east-1.rds.amazonaws.com"
+                },
+                {
+                    "name": "DB_PORT",
+                    "value": "3306"
+                },
+                {
+                    "name": "DB_DATABASE",
+                    "value": "lamp_docker"
+                },
+                {
+                    "name": "DB_USERNAME",
+                    "value": "admin"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "value": "usuario123!"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/lamp-app",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ]
+}
