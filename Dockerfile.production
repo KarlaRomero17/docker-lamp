@@ -27,5 +27,5 @@ RUN chown -R www-data:www-data /var/www/html \
 
 EXPOSE 80
 
-# Ejecutar migraciones al iniciar (para producción)
-CMD ["sh", "-c", "php artisan migrate --force && apache2-foreground"]
+# ✅ CORREGIDO: Clear cache en RUNTIME (no en build)
+CMD ["sh", "-c", "php artisan config:clear && php artisan route:clear && php artisan cache:clear && php artisan migrate --force && apache2-foreground"]
