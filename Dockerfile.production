@@ -27,5 +27,5 @@ RUN chown -R www-data:www-data /var/www/html \
 
 EXPOSE 80
 
-# ✅ CORREGIDO: Clear cache en RUNTIME (no en build)
+# CORREGIDO: Clear cache en RUNTIME (no en build)
 CMD ["sh", "-c", "php artisan config:clear && php artisan route:clear && php artisan cache:clear && php artisan migrate --force && apache2-foreground"]
